@@ -1,0 +1,14 @@
+<%- | $report_stage_dir,
+      $xdmod_dst_dir,
+      $xdmod_hostname,
+      $xdmod_service_acct,
+      $xdmod_service_acct_key,
+| -%>
+# This file is controlled by Puppet
+REPORT_STAGE_DIR=<%= $report_stage_dir %>   # Dir on client to stage the report before copying it to xdmod server
+
+XDMOD_DST_DIR=<%= $xdmod_dst_dir %>
+XDMOD_HOSTNAME=<%= $xdmod_hostname %>
+XDMOD_SERVICE_ACCT=<%= $xdmod_service_acct %>
+XDMOD_SERVICE_ACCT_KEY=<%= $xdmod_service_acct_key %>
+

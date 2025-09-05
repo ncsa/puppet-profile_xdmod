@@ -1,1 +1,25 @@
---- {}
+---
+profile_xdmod::client::cron_hour: 4
+profile_xdmod::client::cron_minute: 0
+profile_xdmod::client::enable_report_generation: true
+profile_xdmod::client::enable_report_transfer: true
+profile_xdmod::client::report_stage_dir: "/tmp/xdmod"
+profile_xdmod::client::xdmod_dst_dir: "unprocessed"
+profile_xdmod::client::xdmod_hostname: null
+profile_xdmod::client::xdmod_service_acct: null
+
+profile_xdmod::server::additional_sshd_match_params:
+  AllowGroups: "%{lookup('profile_xdmod::server::groupname')}"
+  AuthenticationMethods: "publickey"
+  Banner: "none"
+  ForceCommand: "internal-sftp"
+  MaxAuthTries: "6"
+  MaxSessions: "10"
+  PubkeyAuthentication: "yes"
+  X11Forwarding: "no"
+profile_xdmod::server::clients: {}
+profile_xdmod::server::gid: null
+profile_xdmod::server::groupname: "nobody"
+profile_xdmod::server::slurm_log_parent_dir: "/slurm_logs"
+profile_xdmod::server::uid: null
+profile_xdmod::server::username: null
