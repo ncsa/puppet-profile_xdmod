@@ -11,10 +11,10 @@ class profile_xdmod {
   # THIS CLASS IS INTENTIONALLY LEFT EMPTY
 
   $notify_text = @("EOT"/)
-    The top level profile_backup class should not be used.
+    The top level profile_xdmod class should not be used.
     Instead use one of the following classes:
-      - profile_backup::client
-      - profile_backup::server
+      - profile_xdmod::client
+      - profile_xdmod::server
     | EOT
   notify { $notify_text:
     withpath => true,
