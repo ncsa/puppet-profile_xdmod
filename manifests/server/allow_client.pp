@@ -61,4 +61,20 @@ define profile_xdmod::server::allow_client (
     mode   => '0750',
     owner  => $profile_xdmod::server::uid,
   }
+
+  # ENSURE shred dir for host
+  file { "${slurm_log_directory}/shredded":
+    ensure => directory,
+    group  => 'root',
+    mode   => '0750',
+    owner  => 'root',
+  }
+
+  # ENSURE shred_failed dir for host
+  file { "${slurm_log_directory}/shred_failed":
+    ensure => directory,
+    group  => 'root',
+    mode   => '0750',
+    owner  => 'root',
+  }
 }
